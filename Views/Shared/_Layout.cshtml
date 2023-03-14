@@ -11,7 +11,7 @@
 <body>
     <div class="header">
         <div class="logo-img logo-img-bgc">
-            <img src="image/SGK_logo.svg" class="logo" />
+            <img src="~/image/SGK_logo.svg" class="logo" />
         </div>
         <div class="header__menu">
             <div class="menu__btn">
@@ -32,7 +32,7 @@
             <nav class="left_menu-nav menu_nav">
                 <a class="graph_btn graph_btn-text">Кемеровская ГРЭС</a>
                 <a class="graph_btn graph_btn-text">Кузнецкая ТЭЦ</a>
-                <a class="graph_btn graph_btn-text">Беловская ГРЭС</a>
+                <a class="graph_btn graph_btn-text" asp-area="" asp-controller="BelovskayaGres" asp-action="Graph">Беловская ГРЭС</a>
                 <a class="graph_btn ">Ново-Кемеровская ТЭЦ</a>
                 <a class="graph_btn graph_btn-text">Кемеровская ТЭЦ</a>
                 <a class="graph_btn graph_btn-text">Томь-Усинская ГРЭС</a>
@@ -43,9 +43,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
