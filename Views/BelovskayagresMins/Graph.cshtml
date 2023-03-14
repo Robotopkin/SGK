@@ -1,0 +1,77 @@
+﻿@model IEnumerable<SGK.Models.BelovskayagresMin>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+  <div id="container"></div>
+</figure>
+
+@{
+    List<string> xAsisTime = new List<string>();
+    List<double> temp = new List<double>();
+    foreach (var item in Model)
+    {
+        DateTime convertDateTime = UnixSecondsToDateTime((long)Convert.ToInt64(item.Time1970)).AddHours(7);
+        xAsisTime.Add(convertDateTime.ToString());
+
+        temp.Add(Convert.ToDouble(item.Val));
+    }
+    xAsisTime.Reverse();
+    temp.Reverse();
+}
+
+@{
+    DateTime UnixSecondsToDateTime(long timestamp, bool local = false)
+    {
+        var offset = DateTimeOffset.FromUnixTimeSeconds(timestamp);
+        return local ? offset.LocalDateTime : offset.UtcDateTime;
+    }
+}
+<script type="text/javascript">
+    var xAxisArray = JSON.parse('@Html.Raw(Json.Serialize(xAsisTime))');
+    var temperature = JSON.parse('@Html.Raw(Json.Serialize(temp))');
+</script>
+
+<script>
+    Highcharts.chart('graphic', {
+  chart: {
+    type: 'line'
+  },
+  title: {
+    text: 'Беловская ГРЭС'
+  },
+  subtitle: {
+    text: 'Минутная температура'
+  },
+    credits:{
+        enabled: false
+    },
+  xAxis: {
+    categories: xAxisArray
+  },
+  yAxis: {
+    title: {
+      text: 'Температура (°C)'
+    }
+  },
+  plotOptions: {
+    line: {
+      dataLabels: {
+        enabled: true
+      },
+      enableMouseTracking: true
+    }
+  },
+  series: [{
+    name: 'Температура',
+    data: temperature
+  }]
+});
+</script>
