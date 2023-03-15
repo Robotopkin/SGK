@@ -15,8 +15,51 @@
         </div>
         <div class="header__menu">
             <div class="menu__btn">
-                <a class="btn__time">По минутам</a>
-                <a class="btn__time">По часам</a>
+                @switch (ViewData["Title"])
+                {
+                    case "Кемеровская ГРЭС Почасовая температура":
+                        <a class="btn__time"asp-area="" asp-controller="KemgresMins" asp-action="Graph">По минутам</a>
+                        break;
+                    case "Кемеровская ТЭЦ Почасовая температура":
+                        <a class="btn__time"asp-area="" asp-controller="KemtecMins" asp-action="Graph">По минутам</a>
+                        break;
+                    case "Ново-Кемеровская ТЭЦ Почасовая температура":
+                        <a class="btn__time"asp-area="" asp-controller="NewkemtecMins" asp-action="Graph">По минутам</a>
+                        break;
+                    case "Беловская ГРЭС Почасовая температура":
+                        <a class="btn__time"asp-area="" asp-controller="BelovskayagresMins" asp-action="Graph">По минутам</a>
+                        break;
+                    case "Томь-Усинская ГРЭС Почасовая температура":
+                        <a class="btn__time"asp-area="" asp-controller="TomusinskaygresMins" asp-action="Graph">По минутам</a>
+                        break;
+                    case "ГТЭС Новокузнецкая Почасовая температура":
+                        <a class="btn__time"asp-area="" asp-controller="GtesnovokuznetckayMins" asp-action="Graph">По минутам</a>
+                        break;
+                    case "Кузнецкая ТЭЦ Почасовая температура":
+                        <a class="btn__time"asp-area="" asp-controller="KuznetckaytecMins" asp-action="Graph">По минутам</a>
+                        break;
+                    case "Кемеровская ГРЭС Минутная температура":
+                        <a class="btn__time"asp-area="" asp-controller="Kemgres" asp-action="Graph">По часам</a>
+                        break;
+                    case "Кемеровская ТЭЦ Минутная температура":
+                        <a class="btn__time"asp-area="" asp-controller="Kemtecs" asp-action="Graph">По часам</a>
+                        break;
+                    case "Ново-Кемеровская ТЭЦ Минутная температура":
+                        <a class="btn__time"asp-area="" asp-controller="Newkemtecs" asp-action="Graph">По часам</a>
+                        break;
+                    case "Беловская ГРЭС Минутная температура":
+                        <a class="btn__time"asp-area="" asp-controller="Belovskayagres" asp-action="Graph">По часам</a>
+                        break;
+                    case "Томь-Усинская ГРЭС Минутная температура":
+                        <a class="btn__time"asp-area="" asp-controller="Tomusinskaygres" asp-action="Graph">По часам</a>
+                        break;
+                    case "ГТЭС Новокузнецкая Минутная температура":
+                        <a class="btn__time"asp-area="" asp-controller="Gtesnovokuznetckays" asp-action="Graph">По часам</a>
+                        break;
+                    case "Кузнецкая ТЭЦ Минутная температура":
+                        <a class="btn__time"asp-area="" asp-controller="Kuznetckaytecs" asp-action="Graph">По часам</a>
+                        break;
+                }
             </div>
         </div>
     </div>
@@ -29,13 +72,13 @@
     <div class="left_menu">
         <div class="grap-btn grap-btn-bgc">
             <nav class="left_menu-nav menu_nav">
-                <a class="graph_btn graph_btn-text">Кемеровская ГРЭС</a>
-                <a class="graph_btn graph_btn-text">Кузнецкая ТЭЦ</a>
+                <a class="graph_btn graph_btn-text" asp-area="" asp-controller="Kemgres" asp-action="Graph">Кемеровская ГРЭС</a>
+                <a class="graph_btn graph_btn-text" asp-area="" asp-controller="Kemtecs" asp-action="Graph">Кемеровская ТЭЦ</a>
+                <a class="graph_btn " asp-area="" asp-controller="Newkemtecs" asp-action="Graph">Ново-Кемеровская ТЭЦ</a>
                 <a class="graph_btn graph_btn-text" asp-area="" asp-controller="BelovskayaGres" asp-action="Graph">Беловская ГРЭС</a>
-                <a class="graph_btn ">Ново-Кемеровская ТЭЦ</a>
-                <a class="graph_btn graph_btn-text">Кемеровская ТЭЦ</a>
-                <a class="graph_btn graph_btn-text">Томь-Усинская ГРЭС</a>
-                <a class="graph_btn graph_btn-text">ГТЭС Новокузнецкая</a>
+                <a class="graph_btn graph_btn-text" asp-area="" asp-controller="Tomusinskaygres" asp-action="Graph">Томь-Усинская ГРЭС</a>
+                <a class="graph_btn graph_btn-text" asp-area="" asp-controller="Gtesnovokuznetckays" asp-action="Graph">ГТЭС Новокузнецкая</a>
+                <a class="graph_btn graph_btn-text" asp-area="" asp-controller="Kuznetckaytecs" asp-action="Graph">Кузнецкая ТЭЦ</a>
             </nav>
         </div>
     </div>

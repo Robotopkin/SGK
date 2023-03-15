@@ -74,10 +74,10 @@ body {
     text-decoration: none;
 }
 
-    .graph_btn:hover {
-        cursor: pointer;
-        box-shadow: 6px 7px 10px 0 rgba(125, 23, 156, 0.5);
-    }
+.graph_btn:hover {
+    cursor: pointer;
+    box-shadow: 6px 7px 10px 0 rgba(125, 23, 156, 0.5);
+}
 
 .graph_btn-text {
     background-color: #0078A8;
@@ -91,10 +91,10 @@ body {
     text-align: center;
 }
 
-    .graph_btn-text:hover {
-        cursor: pointer;
-        box-shadow: 6px 7px 10px 0 rgba(125, 23, 156, 0.5);
-    }
+.graph_btn-text:hover {
+    cursor: pointer;
+    box-shadow: 6px 7px 10px 0 rgba(125, 23, 156, 0.5);
+}
 
 .btn__time {
     margin-right: 100px;
@@ -109,10 +109,10 @@ body {
     box-shadow: 5px 7px 3px rgb(239 64 86 / 50%);
 }
 
-    .btn__time:hover {
-        cursor: pointer;
-        box-shadow: 6px 7px 10px 0 rgba(125, 23, 156, 0.5);
-    }
+.btn__time:hover {
+    cursor: pointer;
+    box-shadow: 6px 7px 10px 0 rgba(125, 23, 156, 0.5);
+}
 
 .menu__btn {
     display: flex;
@@ -122,8 +122,8 @@ body {
 
 .header__menu {
     background-color: #FFD530;
-    padding-top: 53px;
-    padding-left: 105px;
+    padding-top: 52px;
+    padding-left: 100px;
     margin-left: 321px;
     border-left: 5px solid #EF4056;
 }
